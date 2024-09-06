@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - TaskRabbit</title>
+    <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}">Logout</a>
+                <a href="{% url 'profile' %}">Your Profile</a>
+                <!-- <a href="{% url 'task_list' %}">Manage Your Tasks</a> -->
+            <!-- {% else %}
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'register' %}">Register</a>
+            {% endif %} -->
+        </nav>
+    </header>
+
+    <main>
+        <h2>Welcome to TaskRabbit!</h2>
+        <p>This is the homepage.</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TaskRabbit. All rights reserved.</p>
+    </footer>
+</body>
+</html>
